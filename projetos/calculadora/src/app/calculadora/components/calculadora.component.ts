@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/** Importando o service para ser injetado */
+import { CalculadoraService } from '../services';
+
 /** 
  * selector -> seria o nome da tag a ser utilizado no html Ex: <app-calculadora>.
  * templateUrl -> é o arquivo html que o componente utiliza para sua rendenrização.
@@ -23,8 +26,9 @@ export class CalculadoraComponent implements OnInit {
 
   /** 
    * Construtor do componente.
+   * Aqui está definida a injeção do serviço CalculadoraService
   */
-  constructor() { }
+  constructor(private calculadoraService: CalculadoraService) { }
 
   /**
   * O método ngOnInit é um método dessa interface que é chamado logo que o objeto 
