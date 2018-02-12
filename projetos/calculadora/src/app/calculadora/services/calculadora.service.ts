@@ -51,7 +51,7 @@ export class CalculadoraService {
       default:
         return 0;
     }
-
+    return resultado;
   }
 
 }
