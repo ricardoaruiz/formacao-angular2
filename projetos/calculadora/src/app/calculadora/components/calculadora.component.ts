@@ -51,7 +51,7 @@ export class CalculadoraComponent implements OnInit {
    */
   limpar(): void {
     this.numero1 = '0';
-    this.numero2 = '0';
+    this.numero2 = null;
     this.resultado = null;
     this.operacao = null;
   }
