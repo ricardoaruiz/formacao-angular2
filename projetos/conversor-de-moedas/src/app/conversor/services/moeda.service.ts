@@ -8,8 +8,6 @@ export class MoedaService {
 
   private moedas: Moeda[];
 
-  constructor() { }
-
   private moedasObj = [ //http://fixer.io
     { "sigla": "AUD", "descricao": "Dólar australiano" },
     { "sigla": "BGN", "descricao": "Lev búlgaro" },
@@ -44,6 +42,8 @@ export class MoedaService {
     { "sigla": "USD", "descricao": "Dólar dos Estados Unidos" }, 
     { "sigla": "ZAR", "descricao": "Rand África do Sul" }
     ];
+
+    constructor() { }
 
     listarTodas(): Moeda[] {
       if (this.moedas) {
