@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { JogoDaVelhaService } from './shared';
+
 @Component({
   selector: 'app-jogo-da-velha',
   templateUrl: './jogo-da-velha.component.html',
@@ -7,9 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JogoDaVelhaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private jogoDaVelhaService: JogoDaVelhaService) { }
 
   ngOnInit() {
+    this.jogoDaVelhaService.inicializar();
+  }
+
+  /**
+   * Retorna se a tela de início deve ser exibida.
+   */
+  get showInicio(): boolean {
+    return this.jogoDaVelhaService.showInicio;
+  }
+
+  /**
+   * Retorna se o tabuleiro deve ser exibido.
+   */
+  get showTabuleiro(): boolean {
+    return this.jogoDaVelhaService.showTabuleiro;
+  }
+
+  /**
+   * Retorna se a tela de fim de jogo deve ser exibida.
+   */
+  get showFinal(): boolean {
+    return this.jogoDaVelhaService.showFinal
+  }
+
+  /** 
+   * Inicializa os dados de um novo jogo.
+  */
+  iniciarJogo(): void {
+    this.jogoDaVelhaService.iniciarJogo();
   }
 
 }
