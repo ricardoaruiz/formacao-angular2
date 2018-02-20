@@ -1,6 +1,6 @@
 <br />
 
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" *ngIf="possuiErro">
 	Erro obtendo dados. Tente novamente.
 </div>
 
@@ -11,23 +11,34 @@
   </div>
   
 	<div class="panel-body text-center">
-	  <form class="form-inline">
-      <input type="text" name="valor" class="form-control text-right" 
-        placeholder="0" required>
 
-      <select name="moedaDe" class="form-control" required>
-        <option>
+	  <form class="form-inline" #conversaoForm="ngForm">
+
+      <input type="text" name="valor" class="form-control text-right" 
+        placeholder="0" required
+        [(ngModel)]="conversao.valor">
+
+      <select name="moedaDe" class="form-control" 
+        required [(ngModel)]="conversao.moedaDe">
+
+        <option *ngFor="let moeda of moedas" [value]="moeda.sigla">
+          {{ moeda.sigla }} - {{ moeda.descricao }}
         </option>
       </select>
 
       <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 
-      <select name="moedaPara" class="form-control" required>
-        <option>
+      <select name="moedaPara" class="form-control" 
+        required [(ngModel)]="conversao.moedaPara">
+        
+        <option *ngFor="let moeda of moedas" [value]="moeda.sigla">
+          {{ moeda.sigla }} - {{ moeda.descricao }}
         </option>
       </select>
 
-      <input type="submit" value="Converter" class="btn btn-success">
+      <input type="submit" value="Converter" class="btn btn-success"
+        (click)="converter()"
+        [disabled]="!conversaoForm.form.valid">
 	  </form>
 	 </div>
 </div>

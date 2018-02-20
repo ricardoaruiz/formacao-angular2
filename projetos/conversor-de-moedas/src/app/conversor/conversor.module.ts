@@ -5,6 +5,12 @@ import { CommonModule } from '@angular/common';
 consiga importar o serviço HTTP para fazer chamada a API externa */
 import { HttpModule } from '@angular/http';
 
+/*é preciso importar esse módulo para conseguir usar os recursos de 
+  formulário no componente, tanto no arquivo .ts quanto no arquivo
+  .html
+ */
+import { FormsModule } from '@angular/forms';
+
 import { ConversorComponent } from './components';
 import { MoedaService, ConversorService } from './services';
 
@@ -12,7 +18,8 @@ import { MoedaService, ConversorService } from './services';
 @NgModule({
   imports: [
     CommonModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   declarations: [
     ConversorComponent
