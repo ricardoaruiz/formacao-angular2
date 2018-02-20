@@ -4,9 +4,9 @@
 export class ConversaoResponse {
 
     constructor(
-        private base: string,
-        private date: string,
-        private rates: any
+        public base: string,
+        public date: string,
+        public rates: any
     ) {}
 
 }
