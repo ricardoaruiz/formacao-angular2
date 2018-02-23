@@ -7,7 +7,7 @@ import { TestBed, async } from '@angular/core/testing';
  * Application imports
  */
 import { AppComponent } from './app.component';
-import { DashboardModule, DashboardComponent } from './dashboard';
+import { DashboardModule } from './dashboard';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -16,8 +16,7 @@ describe('AppComponent', () => {
         AppComponent,
       ],
       imports: [
-        DashboardModule,
-        DashboardComponent
+        DashboardModule
       ],
       
     }).compileComponents();
