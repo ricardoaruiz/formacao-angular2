@@ -1,5 +1,6 @@
 <div 
-	class="modal fade" 
+  class="modal fade" 
+  [id]="id"
 	tabindex="-1" 
 	role="dialog" 
 	aria-labelledby="modalLabel">
@@ -14,20 +15,31 @@
         	<span aria-hidden="true">&times;</span>
         </button>
         <h4 class="modal-title" id="modalLabel">
-        	Cotação em 
+        	Cotação em {{ dataCotacao }}
         </h4>
       </div>
       <div class="modal-body text-center">
         <div>
-			<h2>=</h2>
-			<p>1  = / 1  = </p>
+			<h2>
+        {{ conversao.valor }}
+        {{ conversao.moedaDe }}
+        =
+        {{ valorConvertido }}
+        {{ conversao.moedaPara }}
+      </h2>
+			<p>1 {{ conversao.moedaPara }} = 
+         {{ cotacaoPara }} {{ conversao.moedaDe }}
+         / 1 {{ conversao.moedaDe }} = 
+         {{ cotacaoDe }} {{ conversao.moedaPara }}
+      </p>
 		</div>
       </div>
       <div class="modal-footer">
         <button 
         	type="button" 
         	class="btn btn-success"
-        	data-dismiss="modal">
+          data-dismiss="modal"
+          (click)="novaConsulta()">
         	Nova consulta
         </button>
       </div>

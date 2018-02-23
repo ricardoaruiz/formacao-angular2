@@ -37,11 +37,21 @@
       </select>
 
       <input type="submit" value="Converter" class="btn btn-success"
+        data-toggle="modal" 
+        data-target="#modalCotacao"
         (click)="converter()"
         [disabled]="!conversaoForm.form.valid">
 
       <!-- {{ conversaoResponse | json }} -->
 
 	  </form>
-	 </div>
+   </div>
+
+   <!-- Chamando o componente de modal -->
+   <modal-cotacao
+      [id]="'modalCotacao'"
+      [conversaoResponse]="conversaoResponse"
+      [conversao]="conversao"
+      (onConfirm)="init()">
+    </modal-cotacao>
 </div>
