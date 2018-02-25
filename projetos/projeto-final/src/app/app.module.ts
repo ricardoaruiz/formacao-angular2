@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardModule } from './dashboard';
 
 //Manter sempre o AppRoutingModule por último no imports abaixo
 @NgModule({
@@ -12,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    DashboardModule,
     AppRoutingModule
   ],
   providers: [],
