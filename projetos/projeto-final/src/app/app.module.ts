@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard';
 import { CalculadoraModule } from './calculadora';
+import { ConversorModule } from './conversor';
 
 //Manter sempre o AppRoutingModule por último no imports abaixo
 @NgModule({
@@ -16,6 +17,7 @@ import { CalculadoraModule } from './calculadora';
     BrowserModule,
     DashboardModule,
     CalculadoraModule,
+    ConversorModule,
     AppRoutingModule
   ],
   providers: [],
