@@ -8,6 +8,7 @@ import { DashboardModule } from './dashboard';
 import { CalculadoraModule } from './calculadora';
 import { ConversorModule } from './conversor';
 import { TarefasModule } from './tarefas'
+import { JogoDaVelhaModule } from './jogo-da-velha';
 
 //Manter sempre o AppRoutingModule por último no imports abaixo
 @NgModule({
@@ -20,6 +21,7 @@ import { TarefasModule } from './tarefas'
     CalculadoraModule,
     ConversorModule,
     TarefasModule,
+    JogoDaVelhaModule,
     AppRoutingModule
   ],
   providers: [],
