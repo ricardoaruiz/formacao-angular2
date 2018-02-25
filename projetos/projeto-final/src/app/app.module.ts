@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard';
 import { CalculadoraModule } from './calculadora';
 import { ConversorModule } from './conversor';
+import { TarefasModule } from './tarefas'
 
 //Manter sempre o AppRoutingModule por último no imports abaixo
 @NgModule({
@@ -18,6 +19,7 @@ import { ConversorModule } from './conversor';
     DashboardModule,
     CalculadoraModule,
     ConversorModule,
+    TarefasModule,
     AppRoutingModule
   ],
   providers: [],
